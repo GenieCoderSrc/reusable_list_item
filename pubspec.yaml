@@ -1,7 +1,10 @@
 name: reusable_list_item
-description: "A new Flutter package project."
+description: "A simple and customizable Flutter widget to create swipeable list items with start and end actions using flutter_slidable."
 version: 0.0.1
-homepage:
+homepage: https://github.com/GenieCoderSrc/reusable_list_item
+repository: https://github.com/GenieCoderSrc/reusable_list_item
+issue_tracker: https://github.com/GenieCoderSrc/reusable_list_item/issues
+
 
 environment:
   sdk: ^3.7.2
@@ -10,7 +13,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_slidable: ^4.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -21,7 +24,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+example:
+  path: example
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
