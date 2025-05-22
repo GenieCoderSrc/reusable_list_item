@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.3
+- Update All Files.
 ## 0.0.2
 - Create generic_slider_widget.
 
