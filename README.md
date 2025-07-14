@@ -133,7 +133,7 @@ InfoCard(
 | `subtitleTextStyle` | `TextStyle?`    | Custom subtitle style                  |
 
 
-
+---
 
 ## 📸 Example Screens
 
@@ -141,7 +141,6 @@ Use the provided examples in `example/lib` to see how each widget fits into your
 
 
 
----
 
 ## 🔗 Dependencies
 
