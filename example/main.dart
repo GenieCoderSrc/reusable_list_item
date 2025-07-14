@@ -45,14 +45,10 @@ class ListExampleScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: 10,
         itemBuilder: (context, index) {
-          return GenericSliderWidget(
-            child: ListTile(
-              title: Text('Item #$index'),
-              subtitle: const Text('Swipe left or right'),
-            ),
+          return AppSliderWidget(
             startActions: [
               SlidableAction(
-                onPressed: (context) => _onEdit(context),
+                onPressed: (_) => _onEdit(context),
                 backgroundColor: Colors.green,
                 foregroundColor: Colors.white,
                 icon: Icons.edit,
@@ -61,16 +57,78 @@ class ListExampleScreen extends StatelessWidget {
             ],
             endActions: [
               SlidableAction(
-                onPressed: (context) => _onDelete(context),
+                onPressed: (_) => _onDelete(context),
                 backgroundColor: Colors.red,
                 foregroundColor: Colors.white,
                 icon: Icons.delete,
                 label: 'Delete',
               ),
             ],
+            child: AppListTitle(
+              title: 'Item #$index',
+              subtitle: 'Swipe left or right',
+              trailing: const Icon(Icons.chevron_right),
+              onPressed: () => _onEdit(context),
+            ),
           );
         },
       ),
     );
   }
 }
+
+
+
+class ImageWithTitleGridDemo extends StatelessWidget {
+  const ImageWithTitleGridDemo({super.key});
+
+  final List<_ItemData> _items = const [
+    _ItemData(title: 'Camera', image: 'assets/icons/camera.png'),
+    _ItemData(title: 'Gallery', image: 'assets/icons/gallery.png'),
+    _ItemData(title: 'Music', image: 'assets/icons/music.png'),
+    _ItemData(title: 'Documents', image: 'assets/icons/documents.png'),
+    _ItemData(title: 'Settings', image: 'assets/icons/settings.png'),
+    _ItemData(title: 'Profile', image: 'assets/icons/profile.png'),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('ImageWithTitleCard Grid Demo')),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          itemCount: _items.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // 2 columns
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+            childAspectRatio: 0.9,
+          ),
+          itemBuilder: (context, index) {
+            final item = _items[index];
+            return ImageWithTitleCard(
+              title: item.title,
+              imageSource: item.image,
+              radius: 48,
+              isCircleAvatar: true,
+              onTap: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Tapped on ${item.title}')),
+                );
+              },
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class _ItemData {
+  final String title;
+  final String image;
+
+  const _ItemData({required this.title, required this.image});
+}
+

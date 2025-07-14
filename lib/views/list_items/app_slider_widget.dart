@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
-class GenericSliderWidget extends StatelessWidget {
+class AppSliderWidget extends StatelessWidget {
   @override
   final Key? key;
   final Widget child;
@@ -10,7 +10,7 @@ class GenericSliderWidget extends StatelessWidget {
   final List<SlidableAction>? startActions;
   final List<SlidableAction>? endActions;
 
-  const GenericSliderWidget({
+  const AppSliderWidget({
     this.key,
     required this.child,
     this.startPaneMotion,

@@ -1,50 +1,70 @@
 import 'package:flutter/material.dart';
 
 class AppListTitle extends StatelessWidget {
-  final String? title;
-  final Widget? trailing;
-  final VoidCallback? onPressed;
-  final bool border;
-  final TextStyle? textStyle;
-
   const AppListTitle({
     super.key,
     this.title,
+    this.subtitle,
     this.trailing,
     this.onPressed,
     this.border = true,
-    this.textStyle,
+    this.titleTextStyle,
+    this.subtitleTextStyle,
+    this.padding = const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
   });
+
+  final String? title;
+  final String? subtitle;
+  final Widget? trailing;
+  final VoidCallback? onPressed;
+
+  final bool border;
+  final TextStyle? titleTextStyle;
+  final TextStyle? subtitleTextStyle;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return InkWell(
       onTap: onPressed,
       child: Container(
         decoration: BoxDecoration(
-          border: border
-              ? Border(
-                  bottom: BorderSide(
-                    color: Theme.of(context).dividerColor,
-                  ),
-                )
-              : null,
+          border:
+              border
+                  ? Border(bottom: BorderSide(color: theme.dividerColor))
+                  : null,
         ),
+        padding: padding,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            if (title != null)
-              Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 20),
-                child: Text(
-                  title!,
-                  style: textStyle ?? Theme.of(context).textTheme.titleMedium,
-                ),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (title != null)
+                    Text(
+                      title!,
+                      style: titleTextStyle ?? theme.textTheme.titleMedium,
+                    ),
+                  if (subtitle != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4.0),
+                      child: Text(
+                        subtitle!,
+                        style:
+                            subtitleTextStyle ??
+                            theme.textTheme.bodySmall?.copyWith(
+                              color: theme.hintColor,
+                            ),
+                      ),
+                    ),
+                ],
               ),
-            if (trailing != null)
-            trailing ?? Container()
-            // if (trailing != null)
-            //   trailing.call()
+            ),
+            if (trailing != null) trailing!,
           ],
         ),
       ),
