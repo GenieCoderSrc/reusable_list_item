@@ -1,6 +1,6 @@
 name: reusable_list_item
 description: "A simple and customizable Flutter widget to create swipeable list items with start and end actions using flutter_slidable."
-version: 0.0.4+1
+version: 0.0.4+2
 homepage: https://github.com/GenieCoderSrc/reusable_list_item
 repository: https://github.com/GenieCoderSrc/reusable_list_item
 issue_tracker: https://github.com/GenieCoderSrc/reusable_list_item/issues

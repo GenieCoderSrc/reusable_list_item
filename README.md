@@ -30,7 +30,7 @@ Then run:
 flutter pub get
 ```
 
-
+---
 
 ## 📦 Widgets
 
@@ -106,6 +106,7 @@ InfoCard(
 ```
 
 
+---
 
 ## 🧰 Constructor Parameters
 
@@ -131,13 +132,16 @@ InfoCard(
 | `titleTextStyle`    | `TextStyle?`    | Custom title style                     |
 | `subtitleTextStyle` | `TextStyle?`    | Custom subtitle style                  |
 
----
+
+
 
 ## 📸 Example Screens
 
 Use the provided examples in `example/lib` to see how each widget fits into your app's design system.
 
 
+
+---
 
 ## 🔗 Dependencies
 
