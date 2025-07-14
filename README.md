@@ -2,7 +2,7 @@
 
 A simple and reusable Flutter widget package for building customizable, swipeable, and elegant list UIs using the `flutter_slidable` package. Includes utilities like `AppSliderWidget`, `AppListTitle`, `ImageWithTitleCard`, and `InfoCard` for consistent and composable design.
 
----
+
 
 ## ✨ Features
 
@@ -30,7 +30,7 @@ Then run:
 flutter pub get
 ```
 
----
+
 
 ## 📦 Widgets
 
@@ -105,7 +105,7 @@ InfoCard(
 )
 ```
 
----
+
 
 ## 🧰 Constructor Parameters
 
@@ -137,19 +137,19 @@ InfoCard(
 
 Use the provided examples in `example/lib` to see how each widget fits into your app's design system.
 
----
+
 
 ## 🔗 Dependencies
 
 * [flutter_slidable](https://pub.dev/packages/flutter_slidable)
 
----
+
 
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
+
 
 ## 👨‍💼 Author
 

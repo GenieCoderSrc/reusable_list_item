@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.4+1
+
+### July 14, 2025
+
+### ✨ Updated
+- Updated the [README.md](README.md)
+
+
 ## 0.0.4 
 
 ### July 14, 2025
