@@ -1,4 +1,3 @@
-import 'package:app_style/app_style.dart';
 import 'package:flutter/material.dart';
 import 'package:reusable_image_widget/reusable_image_widget.dart';
 
@@ -11,13 +10,13 @@ class ImageWithTitleCard extends StatelessWidget {
     this.iconColor,
     this.iconSize,
     this.titleColor,
-    this.backgroundColor,
     this.onTap,
+    this.backgroundColor,
     this.radius = 50.0,
     this.isCircleAvatar = true,
     this.titleStyle,
     this.padding = const EdgeInsets.all(8.0),
-    this.cardElevation = 3,
+    this.cardElevation = 3.0,
     this.borderRadius = 15.0,
     this.borderColor = const Color(0xFFE0E0E0),
   });
@@ -33,6 +32,8 @@ class ImageWithTitleCard extends StatelessWidget {
 
   /// Color for the fallback icon.
   final Color? iconColor;
+
+  /// Size for the fallback icon.
   final double? iconSize;
 
   /// Color of the title text.
@@ -67,6 +68,8 @@ class ImageWithTitleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: Card(
@@ -75,44 +78,43 @@ class ImageWithTitleCard extends StatelessWidget {
         color: backgroundColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius),
-          side: BorderSide(color: borderColor, width: 1),
+          side: BorderSide(color: borderColor),
         ),
         child: InkWell(
           borderRadius: BorderRadius.circular(borderRadius),
-          splashColor: Theme.of(context).primaryColor.withAlpha(30),
+          splashColor: theme.primaryColor.withAlpha(30),
           onTap: onTap,
-          child: Center(
-            child: Padding(
-              padding: padding,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                spacing: 8.0,
-                children: <Widget>[
-                  imageSource != null
-                      ? AppAvatar(
-                        imageSource: imageSource,
-                        radius: radius,
-                        isCircle: isCircleAvatar,
-                        placeholderIcon: icon,
-                        // iconColor: iconColor,
-                      )
-                      : Icon(icon, size: iconSize ?? 30, color: iconColor),
-                  Text(
-                    title,
-                    textAlign: TextAlign.center,
-                    overflow: TextOverflow.ellipsis,
-                    style:
-                        titleStyle ??
-                        AppTextStyles.subtitleSmallBold.copyWith(
-                          color: titleColor,
-                        ),
-                    // AppTxtStyles.kSmallSubTitleBoldTextStyle.copyWith(
-                    //   color: titleColor,
-                    // ),
-                  ),
-                ],
-              ),
+          child: Padding(
+            padding: padding,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                imageSource != null
+                    ? AppAvatar(
+                      imageSource: imageSource,
+                      radius: radius,
+                      isCircle: isCircleAvatar,
+                      placeholderIcon: icon,
+                    )
+                    : Icon(
+                      icon ?? Icons.image,
+                      size: iconSize ?? 30,
+                      color: iconColor ?? theme.iconTheme.color,
+                    ),
+                const SizedBox(height: 8),
+                Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style:
+                      titleStyle ??
+                      theme.textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: titleColor ?? theme.textTheme.bodyMedium?.color,
+                      ),
+                ),
+              ],
             ),
           ),
         ),

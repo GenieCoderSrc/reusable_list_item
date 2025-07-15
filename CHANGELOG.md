@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.0.5
+
+### July 15, 2025
+
+### Removed 
+- Removed app_style dependency.
+
+
 ## 0.0.4+2
 
 ### July 14, 2025
