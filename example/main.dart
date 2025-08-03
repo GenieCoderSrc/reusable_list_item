@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Reusable List Item Example',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: const ListExampleScreen(),
     );
   }
@@ -25,23 +23,21 @@ class ListExampleScreen extends StatelessWidget {
   const ListExampleScreen({super.key});
 
   void _onEdit(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Edit action clicked')),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('Edit action clicked')));
   }
 
   void _onDelete(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Delete action clicked')),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('Delete action clicked')));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Reusable List Item Example'),
-      ),
+      appBar: AppBar(title: const Text('Reusable List Item Example')),
       body: ListView.builder(
         itemCount: 10,
         itemBuilder: (context, index) {
@@ -76,8 +72,6 @@ class ListExampleScreen extends StatelessWidget {
     );
   }
 }
-
-
 
 class ImageWithTitleGridDemo extends StatelessWidget {
   const ImageWithTitleGridDemo({super.key});
@@ -131,4 +125,3 @@ class _ItemData {
 
   const _ItemData({required this.title, required this.image});
 }
-

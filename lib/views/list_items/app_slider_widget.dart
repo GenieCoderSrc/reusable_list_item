@@ -25,19 +25,21 @@ class AppSliderWidget extends StatelessWidget {
         startActions != null && startActions!.isNotEmpty;
     final bool hasEndActions = endActions != null && endActions!.isNotEmpty;
 
-    final startActionPane = hasStartActions
-        ? ActionPane(
-            motion: startPaneMotion ?? const ScrollMotion(),
-            children: startActions!,
-          )
-        : null;
+    final startActionPane =
+        hasStartActions
+            ? ActionPane(
+              motion: startPaneMotion ?? const ScrollMotion(),
+              children: startActions!,
+            )
+            : null;
 
-    final endActionPane = hasEndActions
-        ? ActionPane(
-            motion: endPaneMotion ?? const ScrollMotion(),
-            children: endActions!,
-          )
-        : null;
+    final endActionPane =
+        hasEndActions
+            ? ActionPane(
+              motion: endPaneMotion ?? const ScrollMotion(),
+              children: endActions!,
+            )
+            : null;
 
     return Slidable(
       key: key,
