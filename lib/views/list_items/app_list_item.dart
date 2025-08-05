@@ -31,10 +31,9 @@ class AppListTitle extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         decoration: BoxDecoration(
-          border:
-              border
-                  ? Border(bottom: BorderSide(color: theme.dividerColor))
-                  : null,
+          border: border
+              ? Border(bottom: BorderSide(color: theme.dividerColor))
+              : null,
         ),
         padding: padding,
         child: Row(

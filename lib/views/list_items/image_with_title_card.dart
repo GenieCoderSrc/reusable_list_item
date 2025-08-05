@@ -92,16 +92,16 @@ class ImageWithTitleCard extends StatelessWidget {
               children: <Widget>[
                 imageSource != null
                     ? AppAvatar(
-                      imageSource: imageSource,
-                      radius: radius,
-                      isCircle: isCircleAvatar,
-                      placeholderIcon: icon,
-                    )
+                        imageSource: imageSource,
+                        radius: radius,
+                        isCircle: isCircleAvatar,
+                        placeholderIcon: icon,
+                      )
                     : Icon(
-                      icon ?? Icons.image,
-                      size: iconSize ?? 30,
-                      color: iconColor ?? theme.iconTheme.color,
-                    ),
+                        icon ?? Icons.image,
+                        size: iconSize ?? 30,
+                        color: iconColor ?? theme.iconTheme.color,
+                      ),
                 const SizedBox(height: 8),
                 Text(
                   title,

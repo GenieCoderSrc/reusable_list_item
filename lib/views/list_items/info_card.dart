@@ -62,24 +62,22 @@ class InfoCard extends StatelessWidget {
   Widget _buildInfoItem(InfoEntity info, ThemeData theme) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      leading:
-          info.imgUrl != null
-              ? AppCircleAvatar(radius: 20, imageSource: info.imgUrl)
-              : null,
+      leading: info.imgUrl != null
+          ? AppCircleAvatar(radius: 20, imageSource: info.imgUrl)
+          : null,
       title: Text(
         info.title ?? '',
         style: titleTextStyle ?? theme.textTheme.titleMedium,
       ),
-      subtitle:
-          info.subTitle != null
-              ? Padding(
-                padding: const EdgeInsets.only(top: 4.0),
-                child: Text(
-                  info.subTitle!,
-                  style: subtitleTextStyle ?? theme.textTheme.bodySmall,
-                ),
-              )
-              : null,
+      subtitle: info.subTitle != null
+          ? Padding(
+              padding: const EdgeInsets.only(top: 4.0),
+              child: Text(
+                info.subTitle!,
+                style: subtitleTextStyle ?? theme.textTheme.bodySmall,
+              ),
+            )
+          : null,
       onTap: () => onItemTap?.call(info),
     );
   }
