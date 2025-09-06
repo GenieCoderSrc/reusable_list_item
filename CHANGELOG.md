@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## 0.0.6
 
+### Sep 8, 2025
+
+### ✨ Updated
+
+- Updated `reusable_image_widget` to 0.1.6
+- Updated `flutter_slidable` to 4.0.1
+
+## 0.0.6
+
 ### Aug 22, 2025
 
 ### ✨ Updated
