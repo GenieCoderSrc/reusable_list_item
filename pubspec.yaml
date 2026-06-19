@@ -14,7 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  reusable_image_widget: ^0.1.7
+  reusable_image_widget: ^0.1.8
   flutter_slidable: ^4.0.3
 
 dev_dependencies:
