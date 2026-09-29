@@ -8,13 +8,15 @@ issue_tracker: https://github.com/GenieCoderSrc/reusable_list_item/issues
 
 environment:
   sdk: '>=3.6.0 <4.0.0'
-resolution: workspace # <-- Required for Melos 8 & Pub Workspaces
+
+
+resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
 
-  reusable_image_widget: ^0.1.9
+  reusable_image_widget: ^0.1.8
   flutter_slidable: ^4.0.3
 
 dev_dependencies:

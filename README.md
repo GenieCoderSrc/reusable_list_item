@@ -20,6 +20,8 @@ A simple and reusable Flutter widget package for building customizable, swipeabl
 Add the following to your `pubspec.yaml`:
 
 ```yaml
+resolution: workspace
+
 dependencies:
   reusable_list_item: <latest_version>
 ```
