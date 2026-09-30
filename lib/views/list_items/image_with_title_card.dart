@@ -107,8 +107,7 @@ class ImageWithTitleCard extends StatelessWidget {
                   title,
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
-                  style:
-                      titleStyle ??
+                  style: titleStyle ??
                       theme.textTheme.bodyMedium?.copyWith(
                         fontWeight: FontWeight.w600,
                         color: titleColor ?? theme.textTheme.bodyMedium?.color,

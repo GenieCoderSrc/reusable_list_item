@@ -53,8 +53,7 @@ class AppListTitle extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 4.0),
                       child: Text(
                         subtitle!,
-                        style:
-                            subtitleTextStyle ??
+                        style: subtitleTextStyle ??
                             theme.textTheme.bodySmall?.copyWith(
                               color: theme.hintColor,
                             ),
